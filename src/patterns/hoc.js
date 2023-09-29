@@ -1,7 +1,6 @@
 import * as React from "react";
 
 const BasicList = (props) => {
-  console.log(props.items);
   return (
     <ul>
       {props.items.map((item, i) => (
@@ -31,7 +30,7 @@ export const HOCExample = () => {
   const [error, setError] = React.useState(null);
 
   React.useEffect(() => {
-    fetch("http://universities.hipolabs.com/search?country=United+States")
+    fetch("http://universities.hipolabs.com/search?country=Kenya")
       .then((res) => res.json())
       .then((data) => {
         setIsLoading(false);
