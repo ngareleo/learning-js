@@ -22,7 +22,7 @@ export const AccordionItem = ({ item, index }) => {
     <li
       onClick={() => setActive(index)}
       key={item.id}
-      style={{ color: item.key }}
+      style={{ color: item.id }}
     >
       <strong>{item.label}</strong>
       {index === active && item.content}
