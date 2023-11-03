@@ -10,17 +10,21 @@ const BasicList = (props) => {
   );
 };
 
-const withAsync = (Component) => (props) => {
-  if (props.loading) {
-    return <h2>We are cookin'</h2>;
-  }
+function withAsync(Component) {
+  const C = (props) => {
+    if (props.loading) {
+      return <h2>We are cookin&apos;</h2>;
+    }
 
-  if (props.error) {
-    return error;
-  }
+    if (props.error) {
+      return Component.props.error;
+    }
 
-  return <Component {...props} />;
-};
+    return <Component {...props} />;
+  };
+
+  return C;
+}
 
 const UniversitiesList = withAsync(BasicList);
 
