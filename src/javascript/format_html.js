@@ -17,6 +17,7 @@
  * @returns {object}
  */
 
+// TODO: Make errors more tracable
 export function readHtmlContent(html) {
   const outerGrabber = /^<(\w+\d*)>(.+)<\/(\w+\d*)>$/g;
   const m = html.matchAll(outerGrabber).next().value;
