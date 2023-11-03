@@ -17,7 +17,7 @@ function withAsync(Component) {
     }
 
     if (props.error) {
-      return Component.props.error;
+      return props.error;
     }
 
     return <Component {...props} />;
@@ -40,7 +40,7 @@ export const HOCExample = () => {
         setIsLoading(false);
         setData(data.map((i) => i.name));
       })
-      .catch(setError());
+      .catch((e) => setError(e));
   }, []);
 
   return <UniversitiesList loading={isLoading} error={error} items={data} />;

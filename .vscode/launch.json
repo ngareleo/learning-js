@@ -1,0 +1,18 @@
+{
+  "configurations": [
+    {
+      "name": "Debug open JS File",
+      "program": "${file}",
+      "request": "launch",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "node"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Jest Tests",
+      "program": "${workspaceRoot}/node_modules/jest/bin/jest.js",
+      "args": ["-i"]
+    }
+  ]
+}
