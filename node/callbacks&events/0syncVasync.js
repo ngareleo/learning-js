@@ -1,5 +1,3 @@
-const process = require("process");
-
 // Synchronous vs Asynchronous Javascript
 
 // Sync JS always blocks the main thread
@@ -8,7 +6,7 @@ function add(a, b, cb) {
 }
 
 function addAsync(a, b, cb) {
-    process.nextTick(() => cb(a + b), 0);
+    setTimeout(() => cb(a + b), 0);
 }
 
 function demoSyncExample() {
@@ -45,9 +43,6 @@ console.log("\n");
 demoAsyncExample();
 
 // Node uses callback mechanism to allow concurrency in a different manner
-// In our example, if we waited longer, that wouldn't block the main thread, and other things would proceed.
-// By making ops async, we basically allow for the thread to continue execution instead of waiting for some external
+// By making ops async, we basically allow for the main thread to continue execution instead of waiting for some external
 // data like a file read, database read or api call. Then do something after the data is available
 // So waiting is off-loaded to another background thread
-
-// Now that we know what async v sync is. How do we write async and sync code
